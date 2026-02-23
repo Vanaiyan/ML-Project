@@ -1,0 +1,11 @@
+__pycache__
+*.pyc
+.ipynb_checkpoints
+doc_images
+Documentation.docx
+Documentation.md
+Documentation.pdf
+generate_docx.py
+~$*
+.git
+.DS_Store
