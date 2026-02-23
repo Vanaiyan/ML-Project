@@ -13,8 +13,7 @@ COPY app.py .
 COPY model_artifacts.joblib .
 COPY SriLanka_Weather_Dataset.csv .
 
-EXPOSE 8501
+ENV PORT=8501
+EXPOSE ${PORT}
 
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
-
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+CMD streamlit run app.py --server.port=${PORT} --server.address=0.0.0.0 --server.headless=true
